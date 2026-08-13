@@ -1,0 +1,13 @@
+flags:= -Wall -I. -std=c2x
+ldflags:= 
+.PHONY: clean
+all:zz
+
+zz:zip.o
+	cc $(flags) $^ -o $@ $(ldflags)
+
+zip.o:zip.c
+	cc $(flags) -c $^
+
+clean:
+	rm -f zz *.o
